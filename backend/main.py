@@ -1,14 +1,12 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI  # type: ignore[import]
+from fastapi.middleware.cors import CORSMiddleware  # type: ignore[import]
 from pydantic import BaseModel
 from groq import Groq  # type: ignore[import]
 import os
-from dotenv import load_dotenv
-
+from dotenv import load_dotenv  # type: ignore[import]
 load_dotenv()
 
 app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
